@@ -24,6 +24,8 @@ namespace DataMatrix.Controllers
         }
 
         [HttpPost("create")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create(Contact contact)
         {
             if (ModelState.IsValid)
@@ -42,6 +44,8 @@ namespace DataMatrix.Controllers
         }
 
         [HttpPut("edit")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Edit(Contact contact) 
         {
             if (ModelState.IsValid)
@@ -62,6 +66,8 @@ namespace DataMatrix.Controllers
         }
 
         [HttpDelete("delete")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Delete(int Id)
         {
             var result = await _contactRepository.Delete(Id);

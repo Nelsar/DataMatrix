@@ -1,0 +1,6 @@
+@DataMatrix_HostAddress = http://localhost:5069
+
+GET {{DataMatrix_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
